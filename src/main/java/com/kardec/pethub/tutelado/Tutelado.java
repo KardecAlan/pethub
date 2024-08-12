@@ -19,12 +19,13 @@ public class Tutelado {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "tudelado_generator")
     private Long id;
 
-    private String name;
+    private String nome;
 
     private Sexo sexo;
 
     private Especie especie;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "tutor_id")
     private Tutor tutor;
 }
