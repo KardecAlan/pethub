@@ -5,6 +5,9 @@ import com.kardec.pethub.tutelado.Tutelado;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+import java.util.Set;
+
 @Getter
 @Setter
 @Builder
@@ -26,15 +29,11 @@ public class Tutor {
 
     private String telefone;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "endereco_id")
+    @OneToOne(cascade = CascadeType.ALL)
     private Endereco endereco;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "tutelado_id")
-    private Tutelado tutelado;
-
-
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "tutor")
+    private List<Tutelado> tutelados;
 
 
 }

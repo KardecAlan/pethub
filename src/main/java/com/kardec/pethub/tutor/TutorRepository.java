@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository("tutorRepository")
 public interface TutorRepository extends JpaRepository<Tutor, Long>, JpaSpecificationExecutor<Tutor> {
+
 }

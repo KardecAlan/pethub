@@ -23,7 +23,7 @@ public class TutorService {
     private TutorMapper tutorMapper;
 
     public Page<TutorResponse> findAll(TutorRequest tutorRequest) {
-        Page<TutorResponse> page = tutorRepository.findAll((Specification<Tutor>) (root, query, criteriaBuilder) -> {
+        Page<Tutor> page = tutorRepository.findAll((Specification<Tutor>) (root, query, criteriaBuilder) -> {
             List<Predicate> predicates = new ArrayList<>();
 
             if (tutorRequest.getNome() != null) {
@@ -35,13 +35,13 @@ public class TutorService {
             }
 
             if (tutorRequest.getTuteladoId() != null) {
-                predicates.add(criteriaBuilder.equal(root.get("tutelado").get("id"), tutorRequest.getTuteladoId()));
+                predicates.add(criteriaBuilder.equal(root.get("tutelados").get("id"), tutorRequest.getTuteladoId()));
             }
 
             return criteriaBuilder.and(predicates.toArray(new Predicate[0]));
-        }, PageRequest.of(tutorRequest.getPage(), tutorRequest.getSize())).map(tutorMapper::mapToDto);
+        }, PageRequest.of(tutorRequest.getPage(), tutorRequest.getSize()));
 
-        return page;
+        return page.map(tutorMapper::mapToDto);
 
     }
 

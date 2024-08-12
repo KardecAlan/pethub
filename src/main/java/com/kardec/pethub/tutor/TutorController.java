@@ -1,5 +1,6 @@
 package com.kardec.pethub.tutor;
 
+import com.kardec.pethub.endereco.EnderecoResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import lombok.extern.slf4j.Slf4j;
@@ -21,7 +22,6 @@ public class TutorController {
                                        @RequestParam(required = false) @Parameter(example = "fuladodetal@gmail.com") String email,
                                        @RequestParam(required = false) @Parameter(example = "123.456.789-00") String cpf,
                                        @RequestParam(required = false) @Parameter(example = "(11) 99999-9999") String telefone,
-                                       @RequestParam(required = false) @Parameter(example = "1") Long enderecoId,
                                        @RequestParam(required = false) @Parameter(example = "1") Long tuteladoId,
                                        @RequestParam(defaultValue = "0") @Parameter(example = "0") int page,
                                        @RequestParam(defaultValue = "10") @Parameter(example = "10") int size) {
@@ -30,7 +30,6 @@ public class TutorController {
                 .email(email)
                 .cpf(cpf)
                 .telefone(telefone)
-                .enderecoId(enderecoId)
                 .tuteladoId(tuteladoId)
                 .page(page)
                 .size(size)

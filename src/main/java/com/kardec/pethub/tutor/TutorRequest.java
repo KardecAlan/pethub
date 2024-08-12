@@ -1,9 +1,11 @@
 package com.kardec.pethub.tutor;
 
 import com.kardec.pethub.comum.PageableDto;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.experimental.SuperBuilder;
-import org.springframework.data.domain.PageRequest;
 
 @Getter
 @Setter
@@ -17,6 +19,5 @@ public class TutorRequest extends PageableDto {
     private String email;
     private String cpf;
     private String telefone;
-    private Long enderecoId;
     private Long tuteladoId;
 }
