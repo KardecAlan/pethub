@@ -23,5 +23,4 @@ public class TutorResponse {
     private String cpf;
     private String telefone;
     private EnderecoResponse endereco;
-    private List<TuteladoResponse> tutelados;
 }

@@ -35,5 +35,4 @@ public class Tutor {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "tutor")
     private List<Tutelado> tutelados;
 
-
 }

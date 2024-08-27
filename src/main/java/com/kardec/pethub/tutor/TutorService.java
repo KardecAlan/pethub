@@ -34,10 +34,6 @@ public class TutorService {
                 predicates.add(criteriaBuilder.like(root.get("cpf"), "%" + tutorRequest.getCpf() + "%"));
             }
 
-            if (tutorRequest.getTuteladoId() != null) {
-                predicates.add(criteriaBuilder.equal(root.get("tutelados").get("id"), tutorRequest.getTuteladoId()));
-            }
-
             return criteriaBuilder.and(predicates.toArray(new Predicate[0]));
         }, PageRequest.of(tutorRequest.getPage(), tutorRequest.getSize()));
 

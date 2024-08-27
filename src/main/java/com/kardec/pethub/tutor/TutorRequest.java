@@ -1,6 +1,7 @@
 package com.kardec.pethub.tutor;
 
 import com.kardec.pethub.comum.PageableDto;
+import com.kardec.pethub.endereco.EnderecoRequest;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,5 +20,5 @@ public class TutorRequest extends PageableDto {
     private String email;
     private String cpf;
     private String telefone;
-    private Long tuteladoId;
+    private EnderecoRequest endereco;
 }
