@@ -17,5 +17,5 @@ public class TuteladoResponse {
     private String nome;
     private Sexo sexo;
     private Especie especie;
-    private Long tutorId;
+    private String tutorNome;
 }

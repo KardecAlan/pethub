@@ -25,6 +25,10 @@ public class Tutelado {
 
     private Especie especie;
 
+    private int idade;
+
+    private int peso;
+
     @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "tutor_id")
     private Tutor tutor;

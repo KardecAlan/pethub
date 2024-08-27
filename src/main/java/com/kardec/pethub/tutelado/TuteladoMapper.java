@@ -10,7 +10,7 @@ public interface TuteladoMapper {
     @Mapping(source = "tutorId", target = "tutor.id")
     Tutelado mapToEntity(TuteladoRequest request);
 
-    @Mapping(source = "tutor.id", target = "tutorId")
+    @Mapping(source = "tutor.nome", target = "tutorNome")
     TuteladoResponse mapToDto(Tutelado entity);
 
     Tutelado mapToDto(TuteladoResponse tuteladoResponse);
